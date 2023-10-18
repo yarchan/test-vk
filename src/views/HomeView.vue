@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <a :href="vkAuthUrl">VK</a>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  setup(){
+    const redirectUri = 'https://github.com/yarchan/test-vk/callback';
+    const clientId = '51773806'; 
+
+    const vkAuthUrl = `https://oauth.vk.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=friends&response_type=token&v=5.131`;
+    return{
+      vkAuthUrl
+    }
+  },
+
 }
 </script>
