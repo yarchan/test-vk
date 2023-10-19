@@ -6,13 +6,18 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    children:[
-      {
-        path:'list-friends',
-        name:'list-friends',
-        component:()=>import('../components/list-friends.vue')
-      },
-    ]
+    // children:[
+    //   {
+    //     path:'list-friends',
+    //     name:'list-friends',
+    //     component:()=>import('../components/list-friends.vue')
+    //   },
+    // ]
+  },
+  {
+    path:'/list-friends',
+    name:'list-friends',
+    component:()=>import('../components/list-friends.vue')
   },
 ]
 
