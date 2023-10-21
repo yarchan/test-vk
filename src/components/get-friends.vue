@@ -5,7 +5,7 @@
         <button @click="getFriend" class="btn btn-primary">Загрузите список друзей</button>
       </div>
       <div class="mb-4">
-        <button @click="buildNewListFriends,this.$router.push('/friend-info')" class="btn btn-primary">Построить</button>
+        <button @click="buildNewListFriends" class="btn btn-primary">Построить</button>
       </div>
       <div class=" mb-4">
         <input v-model="select_friends" @input="newFriends" class="form-control" placeholder="Начните вводить текст для поиска друга, которого хотите добавить" type="text" name="" id="">
