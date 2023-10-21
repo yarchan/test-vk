@@ -1,23 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
-    // children:[
-    //   {
-    //     path:'list-friends',
-    //     name:'list-friends',
-    //     component:()=>import('../components/list-friends.vue')
-    //   },
-    // ]
+    name: 'main',
+    component: ()=>import('../views/Main.vue'),
+    children:[
+      {
+        path: '/',
+        name: 'get-friends',
+        component: ()=>import('../components/get-friends.vue'),
+      }
+    ]
   },
-  {
-    path:'/list-friends',
-    name:'list-friends',
-    component:()=>import('../components/list-friends.vue')
+  { 
+  path:'/friend-info',
+    name:'friend-info',
+    component:()=>import('../components/friend-info.vue')
   },
 ]
 
